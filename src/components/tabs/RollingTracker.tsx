@@ -1,5 +1,5 @@
 import { Fragment, useMemo, useState } from 'react'
-import { DISTROS, LAG_THRESHOLDS, TRACKED_PACKAGES } from '../../data/rollingData'
+import { DATA_LAST_VERIFIED, DISTROS, LAG_THRESHOLDS, TRACKED_PACKAGES } from '../../data/rollingData'
 import type { DistroId, PackageVersionEntry } from '../../types'
 
 function lagPillClass(lagDays: number): string {
@@ -74,6 +74,20 @@ export default function RollingTracker() {
           opóźnienie (<em>lag</em>) względem najnowszego wydania upstream — czyli realny czas, jaki
           mija zanim nowa wersja trafi do gałęzi stabilnej danej dystrybucji.
         </p>
+      </section>
+
+      {/* ── Banner: świeżość danych ── */}
+      <section className="k-panel border-kamber/30 bg-kamber/5 p-3 flex flex-wrap items-center gap-2 text-xs">
+        <span className="k-badge k-pill-warn shrink-0">dane ręcznie zweryfikowane</span>
+        <span className="text-ktext-muted">
+          Stan na <strong className="text-ktext">{DATA_LAST_VERIFIED}</strong> — wersje Gentoo/Arch
+          sprawdzone bezpośrednio na packages.gentoo.org i archlinux.org, openSUSE Tumbleweed wg
+          ostatniego potwierdzonego stanu (może być starszy, patrz komentarze w kodzie źródłowym).
+          To{' '}
+          <strong className="text-ktext">nie jest</strong> tracker aktualizowany automatycznie na
+          żywo — żeby nim był, potrzebny jest automat pobierający dane cyklicznie (np. z
+          repology.org). Zobacz sekcję „Architektura danych" w README.
+        </span>
       </section>
 
       {/* ── Filtry ── */}
