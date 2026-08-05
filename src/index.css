@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: #0d1117;
+    background-image:
+      linear-gradient(180deg, rgba(232, 163, 61, 0.05) 0%, rgba(232, 163, 61, 0) 220px);
+  }
+
+  ::selection {
+    background-color: rgba(232, 163, 61, 0.35);
+    color: #fff;
+  }
+
+  a {
+    color: #e8a33d;
+  }
+  a:hover {
+    color: #ffb84d;
+    text-decoration: underline;
+  }
+
+  code, pre, kbd {
+    font-family: 'Ubuntu Mono', 'DejaVu Sans Mono', Consolas, monospace;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0d1117;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #232b36;
+    border-radius: 2px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #2e3947;
+  }
+}
+
+@layer components {
+  /* Kernel.org-style dense data table */
+  .k-table {
+    @apply w-full border-collapse text-sm;
+  }
+  .k-table th {
+    @apply border border-kbg-border bg-kbg-raised px-3 py-2 text-left font-semibold text-ktext-muted uppercase tracking-wide text-xs;
+  }
+  .k-table td {
+    @apply border border-kbg-border px-3 py-2 align-top;
+  }
+  .k-table tbody tr:nth-child(odd) {
+    @apply bg-kbg-panel;
+  }
+  .k-table tbody tr:nth-child(even) {
+    @apply bg-kbg;
+  }
+  .k-table tbody tr:hover {
+    @apply bg-kbg-raised;
+  }
+
+  .k-panel {
+    @apply bg-kbg-panel border border-kbg-border shadow-panel rounded-sm;
+  }
+
+  .k-badge {
+    @apply inline-flex items-center gap-1 rounded-sm border px-1.5 py-0.5 text-[11px] font-mono uppercase tracking-wide;
+  }
+
+  .k-pill-good {
+    @apply border-kgood/40 bg-kgood/10 text-kgood;
+  }
+  .k-pill-warn {
+    @apply border-kwarn/40 bg-kwarn/10 text-kwarn;
+  }
+  .k-pill-bad {
+    @apply border-kbad/40 bg-kbad/10 text-kbad;
+  }
+
+  .k-heading {
+    @apply font-mono text-xs uppercase tracking-[0.15em] text-kamber;
+  }
+}
