@@ -35,6 +35,14 @@ export default {
         kgood: '#4f9d69',
         kwarn: '#c9a227',
         kbad: '#c2543f',
+        kdebian: {
+          DEFAULT: '#d70a53',
+          dim: '#8a0836',
+        },
+        kfedora: {
+          DEFAULT: '#3c6eb4',
+          bright: '#5296e5',
+        },
       },
       boxShadow: {
         panel: '0 0 0 1px rgba(255,255,255,0.03), 0 1px 2px rgba(0,0,0,0.4)',
