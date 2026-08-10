@@ -1,6 +1,6 @@
 // Współdzielone typy danych dla całej aplikacji Linux Rolling Hub.
 
-export type DistroId = 'gentoo' | 'arch' | 'tumbleweed'
+export type DistroId = 'gentoo' | 'arch' | 'tumbleweed' | 'debianStable' | 'debianLts' | 'fedora' | 'fedoraRawhide'
 
 export interface DistroMeta {
   id: DistroId
